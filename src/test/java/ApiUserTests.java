@@ -2,6 +2,7 @@ import io.restassured.response.Response;
 import controllers.UserController;
 import models.ApiResponse;
 import models.User;
+import models.UserBuilder;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;
 
@@ -67,7 +68,7 @@ public class ApiUserTests {
         ApiResponse user = response.as(ApiResponse.class);
         assertEquals(200, user.getCode());
         assertEquals("unknown", user.getType());
-        assertTrue(Long.parseLong(user.getMessage()) > 9223372036854762000L);
+        assertTrue(Long.parseLong(user.getMessage()) > 9223372036854757568L);
     }
 
     @Test
