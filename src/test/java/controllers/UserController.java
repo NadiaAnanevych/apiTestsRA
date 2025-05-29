@@ -43,14 +43,14 @@ public class UserController {
         return given(this.requestSpecification)
                 .body(user)
                 .when()
-                .put(USER_ENDPOINT + username);
+                .put(USER_ENDPOINT + "/" + username);
     }
 
     @Step("Get user by username")
     public Response getUser(String username) {
         return given(requestSpecification)
                 .when()
-                .get(USER_ENDPOINT + username);
+                .get(USER_ENDPOINT  + "/" + username);
     }
 
     @Step("Get user and wait until he appears")
